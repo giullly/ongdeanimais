@@ -16,9 +16,16 @@
 <div class="conteudo-menu">
 <div class="menu2">
 	<ul>
-		
-	<li><a href="https://ongdeanimais-giully.c9.io/index.php/login/entrar">Login <img src="<?php echo base_url(); ?>static/img/user.png" alt="icone" /></a></li>
-		<li><a href="https://ongdeanimais-giully.c9.io/index.php/login/cadas">Cadastre-se </a></li>
+		<?php  
+	        if(!isset($_SESSION["_LOGIN"])){
+	         	echo  "<li><a href='https://ongdeanimais-giully.c9.io/index.php/login/entrar'>Login </li>";
+				echo  "<li><a href='https://ongdeanimais-giully.c9.io/index.php/login/cadastro'> Cadastre-se </a></li>";
+	        }else{
+	        	$login = $_SESSION["_LOGIN"];
+	            echo  "<li class='welcome'>Bem vindo $login </li>";
+				echo  "<li><a href='https://ongdeanimais-giully.c9.io/index.php/login/logout'> Sair </a></li>";
+	        }             
+		?>
 	<ul>
 <div class="clear"></div>
 </div>
@@ -27,15 +34,15 @@
 		<div class="l-triangle-top"></div>
 		<div class="l-triangle-bottom"></div>
 		<div class="rectangle">
-			<ul>
-				<li><a href="https://ongdeanimais-giully.c9.io/index.php/controller/rota1" >home <img src="<?php echo base_url(); ?>static/img/home1.png" alt="icone" /> </a></li>
-				<li><a href="https://ongdeanimais-giully.c9.io/index.php/controller/rota5">Adote<img src="<?php echo base_url(); ?>static/img/man.png" alt="icone" /> </a></li>
-				<li ><a href="https://ongdeanimais-giully.c9.io/index.php/controller/rota6" style="width:130px">apadrinhe<img src="<?php echo base_url(); ?>static/img/chovendo.png" alt="icone" /></a></li>	
+					<ul>
+				<li><a href="https://ongdeanimais-giully.c9.io/index.php/controller/index" >home <img src="<?php echo base_url(); ?>static/img/home1.png" alt="icone" /> </a></li>
+				<li><a href="https://ongdeanimais-giully.c9.io/index.php/ong/adote">Adote<img src="<?php echo base_url(); ?>static/img/man.png" alt="icone" /> </a></li>
+				<li ><a href="https://ongdeanimais-giully.c9.io/index.php/controller/rota6">Dicas<img src="<?php echo base_url(); ?>static/img/chovendo.png" alt="icone" /></a></li>	
 				<li><a href="https://ongdeanimais-giully.c9.io/index.php/controller/rota3" >Ajude<img src="<?php echo base_url(); ?>static/img/ajude3.png" alt="icone" class="icone"/></a></li>
 				<li><a href="https://ongdeanimais-giully.c9.io/index.php/controller/rota2">Sobre<img src="<?php echo base_url(); ?>static/img/sobre.png" alt="icone" class="icone"/></a></li>
 				<li><a href="https://ongdeanimais-giully.c9.io/index.php/controller/rota4">Contato<img src="<?php echo base_url(); ?>static/img/contato.png" alt="icone" class="icone"/></a></li>
 			</ul>
-					<a href="https://ongdeanimais-giully.c9.io/index.php/welcome/rota1"><div class="logo"></div></a>
+								<a href="https://ongdeanimais-giully.c9.io/index.php/controller/index"><div class="logo"></div></a>
 		</div>
 		<div class="r-triangle-top"></div>
 		<div class="r-triangle-bottom"></div>
